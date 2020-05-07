@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header @onClickHeader="handleOnClickHeader" />
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <Footer />
   </div>
 </template>
@@ -16,7 +18,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 export default {
   methods: {
     handleOnClickHeader(data) {
-      this.$store.commit(cons.navigatePage, data);
+      this.$store.dispatch(cons.actionNavigatePage, data);
     },
   },
   components: {
