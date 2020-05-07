@@ -4,4 +4,7 @@ module.exports = {
       entry: 'src/index.js',
     },
   },
+  transpileDependencies: [
+    'vuetify',
+  ],
 };
