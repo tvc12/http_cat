@@ -9,14 +9,9 @@ export default {
     getActive(name) {
       return name === this.currentActive ? 'active' : '';
     },
-    onClickHome() {
-      this.currentActive = 'home';
-    },
-    onClickContact() {
-      this.currentActive = 'contact';
-    },
-    onClickAbout() {
-      this.currentActive = 'about';
+    onClickHeader(name) {
+      this.currentActive = name;
+      this.$emit('onClickHeader', name);
     },
   },
 };
